@@ -1,5 +1,51 @@
 <script>
-
+export default {
+    name: 'SiteHeader',
+    data() {
+        return {
+            menu: [
+                {
+                    text: 'CHARACTERS',
+                    href: '#'
+                },
+                {
+                    text: 'COMICS',
+                    href: '#'
+                },
+                {
+                    text: 'MOVIES',
+                    href: '#'
+                },
+                {
+                    text: 'TV',
+                    href: '#'
+                }, {
+                    text: 'GAMES',
+                    href: '#'
+                },
+                {
+                    text: 'COLLECTIBLES',
+                    href: '#'
+                },
+                {
+                    text: 'VIDEOS',
+                    href: '#'
+                },
+                {
+                    text: 'FANS',
+                    href: '#'
+                }, {
+                    text: 'NEWS',
+                    href: '#'
+                },
+                {
+                    text: 'SHOP',
+                    href: '#'
+                }
+            ]
+        }
+    }
+}
 </script>
 
 <template>
@@ -8,19 +54,10 @@
             <div class="logo">
                 <a href="/"><img src="../assets/img/dc-logo.png" alt=""></a>
             </div>
-
-
             <nav>
-                <a href="/">CHARACTERS</a>
-                <a class="active_link" href="#">COMICS</a>
-                <a href="#">MOVIES</a>
-                <a href="#">TV</a>
-                <a href="#">GAMES</a>
-                <a href="#">COLLECTIBLES</a>
-                <a href="#">VIDEOS</a>
-                <a href="#">FANS</a>
-                <a href="#">NEWS</a>
-                <a href="#">SHOP</a>
+                <a :href="menu.href" v-for="menu in menu" :class="menu.text === 'COMICS' ? 'active_link' : ''">
+                    {{ menu.text }}
+                </a>
             </nav>
         </div>
     </header>
