@@ -1,12 +1,12 @@
 <script>
 import Jumbotron from "./Main_partials/Jumbotron.vue";
-import CurrentSeriesList from "./Main_partials/CurrentSeriesList.vue";
+import SeriesList from "./Main_partials/SeriesList.vue";
 
 export default {
     name: 'SiteMain',
     components: {
         Jumbotron,
-        CurrentSeriesList
+        SeriesList
     }
 
 }
@@ -16,7 +16,7 @@ export default {
 <template>
     <main>
         <Jumbotron />
-        <CurrentSeriesList />
+        <SeriesList />
     </main>
 </template>
 

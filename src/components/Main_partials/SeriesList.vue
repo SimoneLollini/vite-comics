@@ -1,9 +1,9 @@
 <script>
-
 import DComics from "../data/dc-comics.js";
+import SeriesElement from "../Main_partials/SeriesElement.vue"
 export default {
     components: {
-
+        SeriesElement,
     },
     data() {
         return {
@@ -19,11 +19,10 @@ export default {
 
         <div class="container">
             <div class="badge_title">CURRENT SERIES</div>
+
+
             <div class="row row-cols-6">
-                <div class="col position-relative" v-for="comic in DcComics">
-                    <img :src="comic.thumb" alt="">
-                    <div class="text_wrapper">{{ comic.series }}</div>
-                </div>
+                <SeriesElement v-for="comic in DcComics" :image="comic.thumb" :series="comic.series" />
             </div>
         </div>
         <div class="d-flex justify-content-center">
@@ -39,14 +38,7 @@ export default {
     position: relative;
     padding-top: 4rem;
 
-    .text_wrapper {
-        position: absolute;
-        bottom: 0;
-        background-color: $dark;
-        width: 90%;
-        height: 30%;
-        font-size: 12px;
-    }
+
 
     .btn_primary,
     .badge_title {
