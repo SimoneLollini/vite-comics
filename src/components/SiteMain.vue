@@ -1,16 +1,21 @@
 <script>
-
+import Jumbotron from "./Main_partials/Jumbotron.vue";
+export default {
+    name: 'SiteMain',
+    components: {
+        Jumbotron,
+    }
+}
 </script>
 
 <template>
     <main>
-        <div class="container">---> content goes here &lt;---- </div>
+
+        <Jumbotron />
+
     </main>
 </template>
 
 <style lang="scss" scoped>
-main {
-    color: white;
-    padding: 100px 0;
-}
+
 </style>
