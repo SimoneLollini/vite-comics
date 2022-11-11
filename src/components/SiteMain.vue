@@ -8,7 +8,9 @@ export default {
         Jumbotron,
         CurrentSeriesList
     }
+
 }
+
 </script>
 
 <template>

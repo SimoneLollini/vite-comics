@@ -1,22 +1,67 @@
 <script>
+
 import DComics from "../data/dc-comics.js";
 export default {
-    name: 'CurrentSeriesList',
     components: {
-        DComics,
+
+    },
+    data() {
+        return {
+            DcComics: DComics
+        }
     }
 }
 </script>
 
 <template>
-    <div class="row row-cols-6">
-        <div class="col" v-for="comic in DComics">
-            <img src="https://www.dccomics.com/sites/default/files/styles/covers192x291/public/comic-covers/2018/09/AC1000_DLX_162-001_HD_5ba13723281ab0.37845353.jpg?itok=ZsI-C5eX"
-                alt="">
+
+    <section class="current_series">
+
+        <div class="container">
+            <div class="badge_title">CURRENT SERIES</div>
+            <div class="row row-cols-6">
+                <div class="col position-relative" v-for="comic in DcComics">
+                    <img :src="comic.thumb" alt="">
+                    <div class="text_wrapper">{{ comic.series }}</div>
+                </div>
+            </div>
         </div>
-    </div>
+        <div class="d-flex justify-content-center">
+            <button class="btn_primary">LOAD MORE</button>
+        </div>
+    </section>
 </template>
 
 <style lang="scss" scoped>
+@use '../../assets/scss/partials/variables' as *;
 
+.current_series {
+    position: relative;
+    padding-top: 4rem;
+
+    .text_wrapper {
+        position: absolute;
+        bottom: 0;
+        background-color: $dark;
+        width: 90%;
+        height: 30%;
+        font-size: 12px;
+    }
+
+    .btn_primary,
+    .badge_title {
+        background-color: $primary;
+        width: max-content;
+        padding: 0.75rem 4rem;
+        font-weight: 600;
+        color: white;
+        border: 0;
+    }
+
+    .badge_title {
+        position: absolute;
+        top: 0;
+        translate: 0 -50%;
+    }
+}
 </style>
